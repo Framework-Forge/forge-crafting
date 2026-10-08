@@ -1,27 +1,38 @@
 fx_version 'cerulean'
 game 'gta5'
-description 'crafting_system'
-author 'QT Store'
+description 'Sistema de Crafting Standalone Forge-Core'
+author 'Forge-Core'
 lua54 'yes'
 
+dependency 'pr_bridge'
+
 shared_scripts {
-    'shared/*.lua',
-    '@ox_lib/init.lua',
-    'bridge/framework.lua',
+    '@pr_bridge/init.lua',
+    'shared/config.lua',
+    'shared/locales.lua',
+    'shared/weapon_components.lua',
+    'shared/receita_nova.lua',
+    'shared/receita_tuning.lua',
 }
 
 client_scripts {
-    'bridge/client/*.lua',
+    'cl_dui.lua',
+    'cl_benchtool.lua',
+    'client.lua',
     'cl_utils.lua',
 }
 
 server_scripts {
-    '@oxmysql/lib/MySQL.lua',
-    'bridge/server/*.lua',
+    'sv_db.lua',
     'sv_utils.lua',
 }
 
-dependencies {
-    'oxmysql',
-    'ox_lib',
+ui_page 'html/index.html'
+
+files {
+    'html/index.html',
+    'html/css/**',
+    'html/js/**',
+    'html/images/**',
+    'data/standby_config.json',
 }
