@@ -1,4 +1,5 @@
 Config = {}
+Config.VersionCheck = true
 Config.ImagePath = GetConvar('inventory:imagepath', 'nui://ox_inventory/web/images'):gsub('/+$', '') .. '/'
 Config.ReputationResource = 'forge-reputation'
 Config.CraftingSkill = 'crafting'

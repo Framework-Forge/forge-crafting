@@ -36,3 +36,7 @@ files {
     'html/images/**',
     'data/standby_config.json',
 }
+
+version '1.0.2'
+
+server_script 'server/version.lua'
